@@ -366,7 +366,8 @@ async function traduzir(texto) {
     if (!texto || !texto.trim()) return null;
     const truncado = texto.trim().slice(0, 450);
     try {
-        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(truncado)}&langpair=zh|pt-BR`;
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(truncado)}&langpair=zh|pt-BR`; // Caso aja desejo de aumento para 50k req, só add o email aqui: &
+        // const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(truncado)}&langpair=zh|pt-BR&de=seuemail@gmail.com`;
         const res  = await fetch(url, { signal: AbortSignal.timeout(6000) });
         if (!res.ok) return null;
         const data = await res.json();
