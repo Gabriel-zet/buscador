@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Buscador Xianyu Helper",
+  "version": "1.0.0",
+  "description": "Análise de dados e conversão de valores.",
+  "permissions": [
+    "scripting"
+  ],
+"host_permissions": [
+    "*://*.goofish.com/*",
+    "*://*.cssbuy.com/*"
+],
+  "icons": {
+    "128": "logo.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.goofish.com/*",
+        "*://*.cssbuy.com/*"
+
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "logo.png"
+      ],
+      "matches": [
+        "*://*.goofish.com/*",
+        "*://*.cssbuy.com/*"
+      ]
+    }
+  ]
+}
